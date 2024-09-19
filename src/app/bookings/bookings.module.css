@@ -1,0 +1,269 @@
+/* Luxurious Bookings Page Styles */
+
+.bookingsPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.noBookings {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.bookingsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bookingItem {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookingItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bookingHeader {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotelName {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.bookingStatus {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.bookingContent {
+  display: flex;
+  padding: 1.5rem;
+}
+
+.hotelImageContainer {
+  flex: 0 0 300px;
+  margin-right: 1.5rem;
+}
+
+.hotelImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.bookingInfo {
+  flex: 1;
+}
+
+.hotelAddress {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.bookingDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bookingDetails p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.pricePaid {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e67e22;
+  margin-top: 1rem;
+}
+
+.bookingActions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.cancelButton,
+.modifyButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancelButton {
+  background-color: #e74c3c;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.cancelButton:hover {
+  background-color: #c0392b;
+}
+
+.modifyButton {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.modifyButton:hover {
+  background-color: #2980b9;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.modalContent label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modalContent input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.modalActions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modalActions button:first-child {
+  background-color: #2ecc71;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.modalActions button:first-child:hover {
+  background-color: #27ae60;
+}
+
+.modalActions button:last-child {
+  background-color: #95a5a6;
+  color: #fff;
+}
+
+.modalActions button:last-child:hover {
+  background-color: #7f8c8d;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+.toast.success {
+  background-color: #2ecc71;
+}
+
+.toast.error {
+  background-color: #e74c3c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bookingContent {
+    flex-direction: column;
+  }
+
+  .hotelImageContainer {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .bookingDetails {
+    grid-template-columns: 1fr;
+  }
+}

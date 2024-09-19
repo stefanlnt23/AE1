@@ -1,0 +1,31 @@
+.previewContainer {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.loading, .error {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.hidden {
+  display: none;
+}

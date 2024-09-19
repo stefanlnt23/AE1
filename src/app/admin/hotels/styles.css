@@ -1,0 +1,64 @@
+.admin-hotels table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin-hotels th, .admin-hotels td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .admin-hotels th {
+    background-color: #f2f2f2;
+  }
+  
+  .admin-hotels tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-hotels button, .admin-hotels a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .admin-hotels button:hover, .admin-hotels a:hover {
+    background-color: #0051bb;
+  }
+  
+  .edit-hotel form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .edit-hotel label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .edit-hotel input, .edit-hotel select, .edit-hotel textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  .edit-hotel button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-hotel button:hover {
+    background-color: #0051bb;
+  }
