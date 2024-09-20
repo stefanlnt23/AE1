@@ -37,10 +37,11 @@ export default function LoginPage() {
         isLoading={isLoading}
         error={error}
         buttonText="Login"
+        linkText="Don't have an account?"
+        linkHref="/auth/register"
+        onSubmit={onSubmit}
+        isRegister={false}
       />
-      <p className={styles.registerLink}>
-        Don't have an account? <Link href="/auth/register">Register here</Link>
-      </p>
     </div>
   );
 }

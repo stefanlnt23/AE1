@@ -41,11 +41,11 @@ export default function RegisterPage() {
         isLoading={isLoading}
         error={error}
         buttonText="Register"
+        linkText="Already have an account?"
+        linkHref="/auth/login"
+        onSubmit={onSubmit}
         isRegister={true}
       />
-      <p className={styles.loginLink}>
-        Already have an account? <Link href="/auth/login">Login here</Link>
-      </p>
     </div>
   );
 }

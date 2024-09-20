@@ -87,7 +87,12 @@ export default function Navbar() {
                 </button>
                 <div className={styles.dropdownContent}>
                   <NavLink href="/myaccount">My Account</NavLink>
-                  {isAdmin && <NavLink href="/admin/dashboard">Admin Dashboard</NavLink>}
+                  {isAdmin && (
+                    <>
+                      <NavLink href="/admin/dashboard">Admin Dashboard</NavLink>
+                      <NavLink href="/admin/users">Admin Users</NavLink>
+                    </>
+                  )}
                   <button 
                     className={styles.logoutButton} 
                     onClick={handleLogout}
