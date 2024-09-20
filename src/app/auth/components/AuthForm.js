@@ -5,7 +5,7 @@ import FormInput from './FormInput';
 import useAuthForm from '../hooks/useAuthForm';
 import styles from './AuthForm.module.css';
 
-export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isRegister, disabled }) {
+export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isRegister, disabled, onGoogleSignIn, forgotPasswordText, forgotPasswordHref, error, setError }) {
   const {
     email,
     setEmail,
@@ -13,10 +13,9 @@ export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isR
     setPassword,
     username,
     setUsername,
-    error,
     handleSubmit,
     isLoading,
-  } = useAuthForm(onSubmit, isRegister);
+  } = useAuthForm(onSubmit, isRegister, error, setError);
 
   return (
     <div className={styles.authFormContainer}>
@@ -58,6 +57,14 @@ export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isR
           )}
         </button>
       </form>
+      <button
+        type="button"
+        className={styles.googleButton}
+        onClick={onGoogleSignIn}
+        disabled={disabled || isLoading}
+      >
+        Sign in with Google
+      </button>
       {error && <p className={styles.error}>{error}</p>}
       <p className={styles.linkText}>
         {linkText}{' '}
@@ -65,6 +72,14 @@ export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isR
           {linkText === 'Already have an account?' ? 'Login' : 'Register'}
         </Link>
       </p>
+      {!isRegister && (
+        <p className={styles.linkText}>
+          {forgotPasswordText}{' '}
+          <Link href={forgotPasswordHref} className={styles.link}>
+            Reset Password
+          </Link>
+        </p>
+      )}
     </div>
   );
 }

@@ -99,7 +99,7 @@ const AccommodationTypeButtons = ({ selectedType, onChange }) => (
   </div>
 );
 
-// SearchResults component
+// SearchResults component  
 const SearchResults = ({ results, searchState }) => (
   <div className={styles.resultsGrid}>
     {results.map(hotel => (
@@ -180,6 +180,7 @@ export default function SearchComponent({ isHomePage = false }) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchPerformed, setSearchPerformed] = useState(false); // Add new state variable
 
   useEffect(() => {
     if (!isHomePage && (searchParams.get('destination') || searchState.type)) {
@@ -216,6 +217,7 @@ export default function SearchComponent({ isHomePage = false }) {
   
     setLoading(true);
     setError(null);
+    setSearchPerformed(true); // Set searchPerformed to true when search is triggered
   
     try {
       const newResults = await performSearch(searchState.destination, searchState.type);
@@ -272,7 +274,7 @@ export default function SearchComponent({ isHomePage = false }) {
         <>
           <SearchResults results={results} searchState={searchState} />
 
-          {(!results.length && !loading) && (
+          {(searchPerformed && !results.length && !loading) && (
             <div className={styles.noResults}>
               <p>No results found. Try adjusting your search criteria.</p>
             </div>

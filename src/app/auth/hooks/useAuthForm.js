@@ -3,11 +3,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function useAuthForm(onSubmit, isRegister) {
+export default function useAuthForm(onSubmit, isRegister, error, setError) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -33,7 +32,7 @@ export default function useAuthForm(onSubmit, isRegister) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
+    setError('');
 
     if (!validateForm()) {
       return;
@@ -46,7 +45,7 @@ export default function useAuthForm(onSubmit, isRegister) {
       } else {
         await onSubmit(email, password);
       }
-      router.push('/'); // Redirect to home page after successful auth
+      router.push('/');
     } catch (error) {
       setError(error.message);
     } finally {
@@ -62,6 +61,7 @@ export default function useAuthForm(onSubmit, isRegister) {
     username,
     setUsername,
     error,
+    setError,
     isLoading,
     handleSubmit,
   };

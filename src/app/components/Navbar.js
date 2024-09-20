@@ -67,7 +67,7 @@ export default function Navbar() {
     <nav className={styles.navbar} aria-label="Site navigation">
       <div className={styles.navbarContent}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoText}>HotelFinder</span>
+          <span className={styles.logoText}>Places To Stay</span>
         </Link>
         <button className={styles.menuToggle} onClick={toggleMenu} aria-label="Toggle menu">
           <span className={styles.menuIcon}></span>
