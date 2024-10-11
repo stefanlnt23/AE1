@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\admin\create-hotel\components\BasicInfo.js
 'use client';
 
 import FormInput from '@/app/auth/components/FormInput';

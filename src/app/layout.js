@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\layout.js
 import './globals.css';
 import Navbar from './components/Navbar';
 

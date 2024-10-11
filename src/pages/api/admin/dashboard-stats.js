@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\pages\api\admin\dashboard-stats.js
 import { collection, getCountFromServer } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 

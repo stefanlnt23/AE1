@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\lib\adminCheck.js
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { auth } from './firebase';
 

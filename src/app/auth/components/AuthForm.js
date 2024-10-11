@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\auth\components\AuthForm.js
 'use client';
 
 import Link from 'next/link';
@@ -13,9 +14,28 @@ export default function AuthForm({ onSubmit, buttonText, linkText, linkHref, isR
     setPassword,
     username,
     setUsername,
-    handleSubmit,
     isLoading,
-  } = useAuthForm(onSubmit, isRegister, error, setError);
+    validateForm,
+  } = useAuthForm(isRegister);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (!validateForm(email, password, isRegister ? username : null, setError)) {
+      return;
+    }
+
+    try {
+      if (isRegister) {
+        await onSubmit(email, password, username);
+      } else {
+        await onSubmit(email, password);
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <div className={styles.authFormContainer}>

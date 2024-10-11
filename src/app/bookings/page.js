@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\bookings\page.js
 'use client';
 
 import React, { useState, useEffect } from 'react';

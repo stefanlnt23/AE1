@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\admin\hotels\edit\[id]\page.js
 'use client';
 
 import { useEffect } from 'react';

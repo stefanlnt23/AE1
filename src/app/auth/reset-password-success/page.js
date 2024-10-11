@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\auth\reset-password-success\page.js
 'use client';
 
 import Link from 'next/link';

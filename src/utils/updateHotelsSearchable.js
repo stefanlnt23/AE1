@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\utils\updateHotelsSearchable.js
 import { getFirestore, collection, getDocs, updateDoc, doc } from 'firebase/firestore';
 
 export async function updateHotelsSearchable() {

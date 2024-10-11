@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\hotel\[id]\page.js
 'use client';
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';

@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\auth\utils\firebaseAuth.js
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, sendPasswordResetEmail, confirmPasswordReset } from "firebase/auth";
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db, googleProvider } from "@/lib/firebase";

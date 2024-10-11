@@ -1,16 +1,15 @@
+
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
-export default function useAuthForm(onSubmit, isRegister, error, setError) {
+export default function useAuthForm(isRegister) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
 
-  const validateForm = () => {
+  const validateForm = (email, password, username, setError) => {
     if (!email || !password) {
       setError('Please fill in all required fields.');
       return false;
@@ -30,29 +29,6 @@ export default function useAuthForm(onSubmit, isRegister, error, setError) {
     return true;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      if (isRegister) {
-        await onSubmit(email, password, username);
-      } else {
-        await onSubmit(email, password);
-      }
-      router.push('/');
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return {
     email,
     setEmail,
@@ -60,9 +36,8 @@ export default function useAuthForm(onSubmit, isRegister, error, setError) {
     setPassword,
     username,
     setUsername,
-    error,
-    setError,
     isLoading,
-    handleSubmit,
+    setIsLoading,
+    validateForm,
   };
 }

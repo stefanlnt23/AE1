@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\components\ProgressBar.js
 'use client';
 
 import styles from './ProgressBar.module.css';

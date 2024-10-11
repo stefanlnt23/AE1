@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\admin\hotels\edit\components\HotelRooms.js
 import React from 'react';
 import styles from '../[id]/editHotel.module.css';
 

@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\admin\dashboard\page.js
 'use client';
 
 import { useEffect, useState } from 'react';

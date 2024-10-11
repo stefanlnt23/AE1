@@ -1,12 +1,11 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\auth\register\page.js
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { registerUser, signInWithGoogle } from '@/app/auth/utils/firebaseAuth';
 import { getDoc, setDoc, doc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import useAuthForm from '@/app/auth/hooks/useAuthForm';
 import AuthForm from '@/app/auth/components/AuthForm';
 import styles from './Register.module.css';
 
@@ -15,8 +14,12 @@ export default function RegisterPage() {
   const [error, setError] = useState(null);
 
   const onSubmit = async (email, password, username) => {
-    await registerUser(email, password, username);
-    router.push('/');
+    try {
+      await registerUser(email, password, username);
+      router.push('/');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleGoogleSignIn = async () => {
@@ -39,34 +42,16 @@ export default function RegisterPage() {
     }
   };
 
-  const {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    username,
-    setUsername,
-    isLoading,
-    handleSubmit,
-  } = useAuthForm(onSubmit, true, error, setError);
-
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Register</h1>
       <AuthForm
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        username={username}
-        setUsername={setUsername}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
+        onSubmit={onSubmit}
         error={error}
+        setError={setError}
         buttonText="Register"
         linkText="Already have an account?"
         linkHref="/auth/login"
-        onSubmit={onSubmit}
         onGoogleSignIn={handleGoogleSignIn}
         isRegister={true}
       />

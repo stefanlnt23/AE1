@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\search\page.js
 'use client';
 
 import { useState, useEffect } from 'react';

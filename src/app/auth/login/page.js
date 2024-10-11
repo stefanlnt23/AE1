@@ -1,10 +1,9 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\app\auth\login\page.js
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { loginUser, signInWithGoogle } from '@/app/auth/utils/firebaseAuth';
-import useAuthForm from '@/app/auth/hooks/useAuthForm';
 import AuthForm from '@/app/auth/components/AuthForm';
 import styles from './Login.module.css';
 
@@ -13,8 +12,12 @@ export default function LoginPage() {
   const [error, setError] = useState(null);
 
   const onSubmit = async (email, password) => {
-    await loginUser(email, password);
-    router.push('/');
+    try {
+      await loginUser(email, password);
+      router.push('/');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleGoogleSignIn = async () => {
@@ -27,31 +30,16 @@ export default function LoginPage() {
     }
   };
 
-  const {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    isLoading,
-    handleSubmit,
-  } = useAuthForm(onSubmit, false, error, setError);
-
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Login</h1>
       <AuthForm
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
+        onSubmit={onSubmit}
         error={error}
         setError={setError}
         buttonText="Login"
         linkText="Don't have an account?"
         linkHref="/auth/register"
-        onSubmit={onSubmit}
         onGoogleSignIn={handleGoogleSignIn}
         isRegister={false}
         forgotPasswordText="Forgot Password?"

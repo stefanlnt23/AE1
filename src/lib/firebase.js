@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\lib\firebase.js
 import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore'; 

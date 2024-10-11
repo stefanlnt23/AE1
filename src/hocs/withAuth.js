@@ -1,3 +1,4 @@
+// C:\Users\sefan\Desktop\AE1\AE1\src\hocs\withAuth.js
 'use client';
 
 import { useRouter } from 'next/navigation';
